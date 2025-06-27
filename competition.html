@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EvSLAM Challenge</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/prism/prism.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/prism/prism-treeview.css" rel="stylesheet" type="text/css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="homepage">
+  <!-- <div id="page-wrapper"> -->
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-xl-10 d-flex align-items-center justify-content-between">
+            <!-- <h1 class="logo"><a href="index.html"><img src="assets/img/university.png" alt="" class="img-fluid">&nbsp;<img src="assets/img/nail.png" alt="" class="img-fluid">&nbsp;&nbsp;IROS 2025 EVO Challenge</a></h1> -->
+            <h1 class="logo"><a href="index.html"> IROS 2025 EvSLAM Challenge</a></h1>
+            <nav class="nav-menu d-none d-lg-block">
+              <ul>
+                <li ><a href="index.html">Home</a></li>
+                <li ><a href="data_format.html">Data Format</a></li>
+                <!-- <li class="drop-down"><a>About</a>
+                  <ul>
+                    <li><a href="sensor_suite.html">Sensor Suite</a></li>
+                    <li ><a href="data_format.html">Data Format</a></li>
+                  </ul>
+                </li> -->
+                <li ><a href="download.html">Download</a></li>
+                <li class="active"><a href="competition.html">EvSLAM Challenge</a></li>
+              </ul>
+            </nav><!-- .nav-menu -->
+            <a href="submit.html" class="get-started-btn scrollto">Submit</a>
+          </div>
+        </div>
+      </div>
+    </header><!-- End Header -->
+  
+<div class="wrapper">
+<div class="container">
+<article id="content">
+  <div class="section-title"><h2>EvSLAM Challenge</h2></div>
+  <p class="justified-text">The IROS 2025 EvSLAM Challenge focuses on leveraging the high temporal resolution of event cameras to enhance SLAM/VO (VIO) systems. We hope participants will develop innovative solutions that apply the unique capabilities of event cameras to address challenges faced by four common types of platforms in dynamic environments.</p>
+
+  <div class="section-title"><h2>Tracks</h2></div>
+  <ul>
+    <li><b>Event-Only:</b> SLAM/VO (VIO) systems using event cameras as the visual input. </li>
+    <li><b>Event + Grayscale:</b> SLAM/VO (VIO) systems using event cameras combined with grayscale images as the visual input. </li>
+  </ul>
+
+  <div class="section-title"><h2>Data</h2></div>
+  <p class="justified-text">We provide seven sequences (seq001 – seq007) for algorithm evaluation. In addition, a separate test sequence (mecanum-test) with ground truth is included to facilitate algorithm debugging.</p>
+  <p class="justified-text">You can download the data through <a href="download.html"><b>this link</b></a>.</p>
+
+  <!-- Evaluation Metrics -->
+
+  <div class="section-title"><h2>Evaluation</h2></div>
+
+  <p class="justified-text">
+    In this challenge, we will adopt two evaluation metrics, i.e., Absolute Trajectory Error (ATE) and Area Under Curve (AUC), for the quantitative assessment of state estimation results.
+  </p>
+
+  <ul class="justified-text">
+      <li><b>ATE:</b> The ATE quantifies the global consistency of the estimated trajectory by comparing it to the ground truth. It is particularly useful for assessing long-term drift and overall accuracy throughout the trajectory. ATE is defined as:</li>
+  </ul>
+
+  <ul class="justified-text">
+      $$ 
+      \text{ATE} = \frac{1}{N} \sum_{i=1}^{N} \left\| \mathbf{p}_i - \mathbf{p}_{i,\text{gt}} \right\|
+      $$
+  </ul>
+
+  <ul class="justified-text">
+      <li><b>AUC:</b> Accurate velocity estimation is crucial for closed-loop control, yet no standardized metric assesses linear velocity error. While Relative Pose Error (RPE) translation approximates velocity error, discretization artifacts and false positives (low RPE despite poor velocity estimates) limit its validity.</li>
+  </ul>
+
+  <ul class="justified-text">
+    Common metrics like Absolute (AVE) and Relative Velocity Error (RVE) report statistical summaries but ignore speed-dependent error severity and lack ranking clarity.
+  </ul>
+  <ul class="justified-text">We propose a speed-weighted success metric:</ul>
+
+  <ul class="justified-text">
+    $$ 
+    S_{\xi} = \frac{\sum_{i}^{N} \left\| \mathbf{v}_{\text{gt},i} \right\| \cdot \delta(e_{\text{RV},i} < \xi)}{\sum_i^{N} \left\| \mathbf{v}_{\text{gt},i} \right\|}
+    $$
+  </ul>
+  <ul class="justified-text">
+    where $\delta(\cdot)$ is the Dirac function. RVE thresholds \(\xi\) define success, weighted by ground truth speed to emphasize high-velocity performance. The Area Under Curve (AUC) of $S{_\xi}$ provides a unified ranking (Fig. 1, with weighted curves (Fig. 1(d)) favoring high-speed accuracy over unweighted ones (Fig. 1(c)).
+  </ul>
+  <ul>
+  <figure class="justified-text">
+    <img src="images/competition/AUC.jpg" alt="AUC" style="width: 100%; height: auto;">
+      <figcaption>
+        <strong>Figure 1:</strong> Comparison of different evaluation methods.
+        (a): RVE statistics of three methods (esio <a href="https://arxiv.org/abs/2212.13184" target="_blank">Chen et al. (2023)</a>, eviv <a href="https://arxiv.org/abs/2311.18189" target="_blank"> LU et al.
+          (2024)</a>, and uslam <a href="https://arxiv.org/abs/1709.06310" target="_blank">Vidal et al. (2018))</a>, obtained using raw data from <a href="https://arxiv.org/abs/2311.18189" target="_blank"> LU et al.
+            (2024)</a></a>;
+        (b): Boxplot results of the RVE statistics shown in (a);
+        (c): Unweighted success-rate curves (i.e., $S_{\xi} = \frac{1}{N}\sum_{i=1}^{N}\delta(e_{\mathrm{RV},i}<\xi)$);
+        (d): Success-rate curves using Eq.&nbsp;(5).
+      </figcaption>
+  </figure>
+  </ul>
+  
+  
+  
+  <!-- <ul class="justified-text">
+      $$ 
+      \text{RVE} = \frac{\Vert \mathbf{v}_{\text{gt}} - \mathbf{v}_{\text{est}} \Vert_2}{\Vert \mathbf{v}_{\text{gt}} \Vert_2} \times 100\%
+      $$
+  </ul> -->
+
+  <!-- <ul class="justified-text">
+      We define the weighted success-rate curve \( S_{\xi} \) as the proportion of velocity estimates with RVE below a threshold \( \xi \):
+  </ul>
+
+
+
+  <ul class="justified-text">
+      The Area Under Curve is computed from the weighted success-rate curve \( S_{\xi} \). This ensures that successful estimates during high-speed motion contribute more significantly to the metric, resulting in higher AUC values.
+  </ul> -->
+
+
+
+  <script type="text/javascript">
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  </script>
+
+
+  <div class="section-title"><h2>Submit</h2></div>
+  <p class="justified-text"><strong>The trajectory from the left event camera is expected.</strong>  For each of the 7 trajectories in 
+    the testing data, compute the camera poses, and save them in the text file with the name seq00X.txt. 
+    Put all 7 files into a zip file with the following structure: </p>
+    <div class="row">
+      <div class="col-md-12"> 
+        <pre><code class="language-treeview">
+        EVO_Results.zip/
+        |-- seq001.txt
+        |-- seq002.txt
+        |-- ...
+        |-- seq007.txt
+        </code></pre>
+    
+        <p class="justified-text">Note that our automatic evaluation tool expects the estimated trajectory to be in this format.</p>
+    
+        <ul class="justified-text">
+          <li>
+            <p>Each line adheres to the format: <code class="lang-python">timestamp tx ty tz qx qy qz qw vx vy vz</code>.</p>
+          </li>
+          <li>
+            <p><code class="lang-python">timestamp</code>: Specifies the pose time, and <strong>must match one-to-one</strong> with entries in the <strong>Reference timestamps</strong> file.</p>
+          </li>
+          <li>
+            <p><code class="lang-python">tx ty tz</code>: Represent the 3D position of the event camera's optical center with respect to <strong>the world coordinate frame</strong>, expressed in meters.</p>
+          </li>
+          <li>
+            <p><code class="lang-python">qx qy qz qw</code>: Represent the orientation of the event camera's optical center relative to <strong>the world coordinate frame</strong>, expressed as a unit quaternion.</p>
+          </li>
+          <li>
+            <p><code class="lang-python">vx vy vz</code>: Denote the linear velocity of the event camera's optical center, expressed in the <strong>camera-centric coordinate frame</strong>.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    <div class="section-title"><h2>Timeline</h2></div>
+      <li>
+      <strong>Start Time: </strong>July 1, 2025 
+      </li>
+      <li>
+        <strong>End Time: </strong>September 30, 2025 
+      </li>
+      <li>
+        <strong>Winners announcement: </strong>October 1, 2025 
+      </li>
+
+      <div class="section-title"><h2>Terms</h2></div>
+
+      <p style="text-align: justify; color: #444;">
+        All participants are required to submit the following materials:
+      </p>
+      
+      <ul style="text-align: left; color: #444; margin-left: 1rem;">
+        <li>
+          A <strong>video demonstration</strong> showcasing the practical performance of the proposed SLAM/VIO system.
+        </li>
+        <li>
+          A <strong>technical report</strong> briefly describing the methodology, system design, and experimental results.
+        </li>
+      </ul>
+      
+      <p style="text-align: justify; color: #444;">
+         This benchmark is governed by the 
+        <a href="https://sites.google.com/view/zhouyi-joey/home" target="_blank"><b>NAIL Lab</b></a>.
+      </p>
+      
+      
+
+      </article>
+
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+<!-- <div class="section-title"><h2>Leaderboard</h2></div>
+<form method="post" action="eval_semantic_seg_detail.php"><table class="table table-striped table-borderless">
+  <tr class="heading">
+    <td class="results"></td>
+     <td class="results">Method</td>
+     <td class="results">Setting</td>
+     <td class="results">Code</td>
+     <td class="results"><span style="color:#009961"><u>ATE</u></span></td>
+     <td class="results">RPE</td>
+     <td class="results">Runtime</td>
+     <td class="results">Environment</td>
+   </tr>
+   <tr>
+    <td class="results">1</td>
+     <td class="results"><a href="">esvo2</a></td>
+     <td class="results"></td>
+     <td class="results"><a href="https://github.com/NAIL-HNU/ESVO2" target="blank">code</a></td>
+     <td class="results"><b>...</b></td>
+     <td class="results"><b>...</b></td>
+     <td class="results">...</td>
+     <td class="results">1 core @ 2.5 Ghz (C/C++)</td>
+   </tr>
+   <tr>
+    <td class="results_sub" colspan="9">J. Niu, S. Zhong, X. Lu, S. Shen, G. Gallego and Y. Zhou: <a href="https://ieeexplore.ieee.org/document/10912788"> ESVO2: Direct Visual-Inertial Odometry With Stereo Event Cameras</a>. TRO 2025.<br/></td>
+   </tr>
+   
+ </table></form> -->
+
+<!-- <center><a target="_blank" href="table_semantic_seg.php?&benchmark=semantic2d&mode=1"> Table as LaTeX</a> | <a target="_blank" href="table_semantic_seg.php?&benchmark=semantic2d&mode=2"> Only published Methods</a></center><br><br> -->
+
+
+</article>
+</div></div>
+<br class="clear">
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; 2025 | <a href="">Terms of Service</a> | <a href="">Imprint</a> | <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+</div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/prism/prism.js"></script>
+<script src="assets/vendor/prism/prism-treeview.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EvSLAM Challenge</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/prism/prism.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/prism/prism-treeview.css" rel="stylesheet" type="text/css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="homepage">
+<!-- <div id="page-wrapper"> -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-10 d-flex align-items-center justify-content-between">
+          <!-- <h1 class="logo"><a href="index.html"><img src="assets/img/university.png" alt="" class="img-fluid">&nbsp;<img src="assets/img/nail.png" alt="" class="img-fluid">&nbsp;&nbsp;IROS 2025 EVO Challenge</a></h1> -->
+          <h1 class="logo"><a href="index.html"> IROS 2025 EvSLAM Challenge</a></h1>
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="data_format.html">Data Format</a></li>
+              <!-- <li class="drop-down">
+                <a>About</a>
+                <ul>
+                  <li><a href="sensor_suite.html">Sensor Suite</a></li>
+                  <li><a href="data_format.html">Data Format</a></li>
+                </ul>
+              </li> -->
+              <li ><a href="download.html">Download</a></li>
+              <li ><a href="competition.html">EvSLAM Challenge</a></li>
+            </ul>
+          </nav><!-- .nav-menu -->
+          <a href="submit.html" class="get-started-btn scrollto">Submit</a>
+        </div>
+      </div>
+    </div>
+  </header><!-- End Header -->
+  
+
+<article id="content">
+
+  <div class="wrapper">
+  <div class="container" id="main">
+
+  <!-- ======= Tittle ======= -->
+  <div class="section-title">
+    <h1>A Challenge on Event-based State Estimation for High-Speed Maneuvers</h1>
+  </div>
+
+  <!-- <div style="text-align: center; position: relative;">
+    <figure class="aligncenter is-resized">
+      <a href="https://youtu.be/gmAU32Oeiv8" style="display: block; position: relative;" target="_blank">
+        <img src="images/index/video1.png" alt="" class="wp-image-12583" width="800" height="450" style="border-radius: 10px;">
+        <div class="youtube-play-button"></div>
+      </a>
+    </figure>
+  </div> -->
+
+  <!-- ======= Introduction ======= -->
+  <div class="section-title"><h2>Introduction</h2></div>
+  <p class="justified-text">
+    We introduce a benchmarking framework
+    for the task of event-based state estimation, featuring: 
+    (1) a novel dataset that complements missing characteristics
+    in existing ones, and (2) a novel evaluation metric that
+    can fairly measure the operation boundaries of event-based
+    solutions. This framework is instantiated through an IROS
+    2025 Workshop challenge that benchmarks state-of-the-art
+    methods, yielding insights into optimal architectures and
+    persistent challenges.
+
+  <div class="section-title"><h3>Objectives</h3></div>
+   <ul class="justified-text">
+    <li>Providing a quantitative assessment on how much
+      of the potential of event cameras for handling
+      aggressive maneuvers in stateestimation tasks has
+      been unlocked.</li>
+    <!-- <li>Figuring out imperfections in current public datasets,
+      such as incomplete sensor configurations, suboptimal
+      spatio-temporal (ST) calibration in multi-sensor systems, and ST inconsistency across stereo observations,
+      etc.</li> -->
+    <li>Providing a sufficient variation in data collection
+      platforms, covering a wide scope of challenging
+      motion patterns under a clear and rigorous definition
+      of high-speed maneuvers for mobile robots.</li>
+    <li>Determining the optimal design through comprehensive benchmarking of all state-of-the-art solutions
+      using the proposed dataset and evaluation metrics,
+      while analyzing any remaining gaps in knowledge
+      transfer and commercialization.</li>
+  </ul>
+  </p>
+  <!-- End Introduction -->
+
+  <!-- ======= Sensor Section ======= -->
+  <!-- <div class="section-title"><h2>Sensor Suite</h2></div>
+  <div id="portfolio" class="portfolio">
+
+    <div class="row portfolio-container">
+
+      <div class="col-lg-3 col-md-6 portfolio-item">
+        <a href="images/index/sensor1.png" data-gall="seuq1" class="venobox preview-link" title="FPV drone">
+          <img src="images/index/sensor1.png" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="200">   
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-6 portfolio-item">
+        <a href="images/index/sensor2.png" data-gall="seuq2" class="venobox preview-link" title="Slider">
+          <img src="images/index/sensor2.png" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="150">   
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-6 portfolio-item">
+        <a href="images/index/sensor3.png" data-gall="seuq2" class="venobox preview-link" title="Robotic arm">
+          <img src="images/index/sensor3.png" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="100">   
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-6 portfolio-item">
+        <a href="images/index/sensor4.png" data-gall="seuq2" class="venobox preview-link" title="Mecanum-wheeled robot">
+          <img src="images/index/sensor4.png" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="100">   
+        </a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>
+    As shown in the figure above, the acquisition device suite includes an FPV drone, a slider, a robotic arm, and a Mecanum-wheeled robot.
+  </p> -->
+  <!-- End Sensor -->
+
+  <!-- ======= Example Section ======= -->
+  <!-- <div class="section-title"><h2>Sequence Examples</h2></div>
+    <div id="portfolio" class="portfolio">
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-3 col-md-6 portfolio-item">
+            <a href="images/index/seq1.jpg" data-gall="seuq1" class="venobox preview-link" title="seq1">
+              <img src="images/index/seq1.jpg" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="100">   
+            </a>
+            <a href="images/index/seq1.jpg" data-gall="seuq1" class="venobox preview-link" title="seuq1"></a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item">
+            <a href="images/index/seq1.jpg" data-gall="seuq2" class="venobox preview-link" title="seq2">
+              <img src="images/index/seq1.jpg" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="100">   
+            </a>
+            <a href="images/index/seq1.jpg" data-gall="seuq2" class="venobox preview-link" title="seuq2"></a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item">
+            <a href="images/index/seq1.jpg" data-gall="seuq2" class="venobox preview-link" title="seq2">
+              <img src="images/index/seq1.jpg" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="100">   
+            </a>
+            <a href="images/index/seq1.jpg" data-gall="seuq2" class="venobox preview-link" title="seuq2"></a>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item">
+            <a href="images/index/seq1.jpg" data-gall="seuq2" class="venobox preview-link" title="seq2">
+              <img src="images/index/seq1.jpg" class="img-center" alt=""  data-aos="zoom-in" data-aos-delay="100">   
+            </a>
+            <a href="images/index/seq1.jpg" data-gall="seuq2" class="venobox preview-link" title="seuq2"></a>
+          </div>
+        </div>
+    </div> -->
+  <!-- End Example Section -->
+
+<!-- ======= Copyright Section ======= -->
+<div class="section-title"><h2>License</h2></div>
+  <p class="justified-text">All datasets and benchmarks on this page are copyright by us and published under the 
+  <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
+  Creative Commons Attribution-NonCommercial-ShareAlike 3.0</a> License.</p>
+<!-- End Copyright Section -->
+
+<!-- ======= Citation Section ======= -->
+<!-- <div class="section-title"><h2>Citation</h2></div>
+Please cite the following publication when using this benchmark in an academic context:
+<br><br>
+<div class="alert alert-secondary" role="alert">
+@article{, <br>
+&nbsp;&nbsp;    title&nbsp;= &nbsp;{<a href=""> </a>}, <br>
+&nbsp;&nbsp;     author&nbsp;=&nbsp;{}, <br>
+&nbsp;&nbsp;     journal&nbsp;=&nbsp;{}, <br>
+&nbsp;&nbsp;     year&nbsp;=&nbsp;{}, <br>
+}
+</div> -->
+<!-- End Citation Section -->
+
+<!-- ======= News Section ======= -->
+<div class="section-title"><h2>News</h2></div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-2"> June 8, 2025</div>
+    <div class="col-12 col-sm-12 col-md-10"> ESE-HSM Benchmark is online!</a></div>
+  </div>
+ <!-- End News Section -->
+
+<!-- <br class=clear> -->
+
+<!-- ========== Organizers Section ========== -->
+<!-- ========== Organizers Section for White Background ========== -->
+<div class="section-title"><h2>Organizers</h2></div>
+<!-- Organizers Section with Light Gray Background -->
+<!-- Organizers Section with Light Gray Background -->
+<div class="py-5" style="background-color: #f8f9fa;">
+  <div class="container text-center mb-5">
+
+    <div class="row justify-content-center">
+
+      <!-- Organizer 4 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="https://sites.google.com/view/zhouyi-joey/home" target="_blank">
+          <div class="profile-img-wrapper">
+            <img src="images/index/zhouyi.png" class="rounded-circle profile-img" alt="Yi Zhou" style="object-position: center 15%;">
+          </div>
+          <h5 class="mt-3 mb-1" style="color: #222;">Yi Zhou</h5>
+        </a>
+        <p style="font-size: 0.95rem; color: #666;">
+          <img src="assets/img/university.png" alt="HNU Logo" height="24" style="padding-bottom: 5px;">
+          HNU, NAIL Lab
+        </p>
+      </div>
+      
+      <!-- Organizer 1 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="https://scholar.google.com/citations?user=EpIxnIEAAAAJ&hl=zh-CN" target="_blank">
+          <div class="profile-img-wrapper">
+            <img src="images/index/njk.jpg" class="rounded-circle profile-img" alt="Junkai Niu" style="object-position: center top;">
+          </div>
+          <h5 class="mt-3 mb-1" style="color: #222;">Junkai Niu</h5>
+        </a>
+        <p style="font-size: 0.95rem; color: #666;">
+          <img src="assets/img/university.png" alt="HNU Logo" height="24" style="padding-bottom: 5px;">
+          HNU, NAIL Lab
+        </p>
+      </div>
+
+      <!-- Organizer 2 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="https://scholar.google.com/citations?user=ilHRcO4AAAAJ&hl=zh-CN" target="_blank">
+          <div class="profile-img-wrapper">
+            <img src="images/index/zs.jpg" class="rounded-circle profile-img" alt="Sheng Zhong" style="object-position: center center;">
+          </div>
+          <h5 class="mt-3 mb-1" style="color: #222;">Sheng Zhong</h5>
+        </a>
+        <p style="font-size: 0.95rem; color: #666;">
+          <img src="assets/img/university.png" alt="HNU Logo" height="24" style="padding-bottom: 5px;">
+          HNU, NAIL Lab
+        </p>
+      </div>
+
+      <!-- Organizer 3 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <a href="https://scholar.google.com/citations?user=ZvVrufAAAAAJ&hl=zh-CN&oi=ao" target="_blank">
+          <div class="profile-img-wrapper">
+            <img src="images/index/sunkaizhen.jpg" class="rounded-circle profile-img" alt="Kaizhen Sun" style="object-position: center 30%;">
+          </div>
+          <h5 class="mt-3 mb-1" style="color: #222;">Kaizhen Sun</h5>
+        </a>
+        <p style="font-size: 0.95rem; color: #666;">
+          <img src="assets/img/university.png" alt="HNU Logo" height="24" style="padding-bottom: 5px;">
+          HNU, NAIL Lab
+        </p>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- <footer id="footer">
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class="mb-3" style="font-size: 1.5rem; font-weight: 500;">
+          Organizers
+        </p>
+    
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="https://www.hnu.edu.cn/" class="mx-4">
+            <img src="assets/img/university.png" alt="HNU" class="img-fluid" style="max-height: 80px;">
+          </a>
+          <a href="https://sites.google.com/view/zhouyi-joey/home?authuser=0" class="mx-4">
+            <img src="assets/img/nail.png" alt="NAIL Lab" class="img-fluid" style="max-height: 80px;">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <!-- End Footer -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; 2025 | <a href="">Terms of Service</a> | <a href="">Imprint</a> | <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/prism/prism.js"></script>
+<script src="assets/vendor/prism/prism-treeview.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
