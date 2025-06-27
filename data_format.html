@@ -82,14 +82,14 @@
   │   `-- calib_results_drone.txt
   |   `-- calib_results_others.txt
   |-- timestamps/
-  │   `-- seq001.txt
-  │   `-- seq002.txt
-  │   `-- seq003.txt
-  │   `-- seq004.txt
-  │   `-- seq005.txt
-  │   `-- seq006.txt
-  │   `-- seq007.txt
-  |   `-- test.txt
+  │   `-- seq001_ref_time.txt
+  │   `-- seq002_ref_time.txt
+  │   `-- seq003_ref_time.txt
+  │   `-- seq004_ref_time.txt
+  │   `-- seq005_ref_time.txt
+  │   `-- seq006_ref_time.txt
+  │   `-- seq007_ref_time.txt
+  |   `-- test_ref_time.txt
   </code></pre>
   <p>The `rosbag` folder contains the data bags for each sequence, the `calibration` folder contains the calibration files for different vehicles, and the `timestamps` folder contains the timestamps associated with the trajectories we expect participants to provide.</p>
 
@@ -135,11 +135,6 @@ Our dataset includes data from two event cameras, an Intel RealSense D435, and a
       href="https://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/CompressedImage.html" 
       target="_blank" rel="noreferrer noopener" 
       >sensor_msgs/CompressedImage</a>): Depth images captured by the RealSense camera.</li>
-
-  <li><code class="lang-python">'/vrpn_client_node/drone1/pose'</code>: <br> (<a 
-        href="https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html" 
-        target="_blank" rel="noreferrer noopener" 
-        >geometry_msgs/PoseStamped</a>): Pose of the drone in the world frame.</li>
 </ul>
     
 
