@@ -63,29 +63,38 @@
 <div class="container">
 <article id="content">
   <div class="section-title"><h2>Folder Structure</h2></div>
-  Our dataset is divided into 4 individual sequences...
+  <p>The data used in the EvSLAM challenge can be downloaded via <a href="https://drive.google.com/drive/folders/1Vjs0xYlBGE06t61pN1U1nTzKiWdGvGUv?usp=drive_link" target="_blank">this link</a>, and the folder structure is as follows:</p>
   <div class="row">
 
   <div class="col-md-12"> 
   <pre><code class="language-treeview">
   EvSLAM/
-  |-- data_raw/
-  |   `-- seq1/
-  |       |-- image_{00|01}/
-  |       |   |-- data_rect/
-  |       |   |   `-- {frame:0>10}.png
-  |       |   |-- data_rgb/
-  |       |   |   `-- {frame:0>10}.png
-  |       |   `-- timestamps.txt
-  |       `-- image_{02|03}/
-  |           |-- data_rgb/
-  |           |   `-- {frame:0>10}.png
-  |           `-- timestamps.txt
+  |-- rosbag/
+  |   `-- seq001.bag
+  |   `-- seq002.bag
+  |   `-- seq003.bag
+  |   `-- seq004.bag
+  |   `-- seq005.bag
+  |   `-- seq006.bag
+  |   `-- seq007.bag
+  |   `-- test.bag
   |-- calibration/
-  │   `-- calib_cam_to_pose.txt
-  |   ...
+  │   `-- calib_results_drone.txt
+  |   `-- calib_results_others.txt
+  |-- timestamps/
+  │   `-- seq001.txt
+  │   `-- seq002.txt
+  │   `-- seq003.txt
+  │   `-- seq004.txt
+  │   `-- seq005.txt
+  │   `-- seq006.txt
+  │   `-- seq007.txt
+  |   `-- test.txt
   </code></pre>
+  <p>The `rosbag` folder contains the data bags for each sequence, the `calibration` folder contains the calibration files for different vehicles, and the `timestamps` folder contains the timestamps associated with the trajectories we expect participants to provide.</p>
+
 </div>
+
 </div>
 
 
