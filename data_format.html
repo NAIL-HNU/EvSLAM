@@ -145,11 +145,64 @@ Our dataset includes data from two event cameras, an Intel RealSense D435, and a
     
 
 <div class="section-title"><h2>Calibrations</h2></div>
-  The calibration folder contains intrinsics and extrinsics of our sensors.
-  <ul>
-    <li> <code class="lang-python">calibration/calib_cam_to_pose.txt</code>: <br>
-     Each line contains a 3x4 matrix denoting the transformation from camera coordinates to left event camera coordinates ... </li> 
-  </ul>
+The calibration format for <b>calib_results_cam_XX.txt</b> is as follows:
+<ul>
+  <li><strong>Common settings:</strong><br>
+      Camera model: <code>pinhole</code> + <code>radtan</code> distortion,<br>
+      Resolution: <code>640×480</code>
+  </li>
+  <li><code class="lang-python">'/dvxplorer_left/events'</code> (cam0):<br>
+      Extrinsics: <code>T_cam_imu</code> (IMU → cam0)<br>
+      Intrinsics: <code>[fx, fy, cx, cy]</code><br>
+      Distortion: <code>[k1, k2, p1, p2]</code><br>
+      Overlaps: <code>cam1–cam4</code><br>
+      Time offset: <code>timeshift_cam_imu</code>
+  </li>
+  <li><code class="lang-python">'/dvxplorer_right/events'</code> (cam1):<br>
+      Extrinsics: <code>T_cam_imu</code> (IMU → cam1)<br>
+      Intrinsics &amp; distortion: same as common<br>
+      Overlaps: <code>cam0, cam2–cam4</code><br>
+      Relative extrinsics: <code>T_cn_cnm1</code> (cam1 ← cam0)<br>
+      Time offset: <code>timeshift_cam_imu</code>
+  </li>
+  <li><code class="lang-python">'/camera/color/image_raw/compressed'</code> (cam2):<br>
+      Extrinsics: <code>T_cam_imu</code> (IMU → cam2)<br>
+      Intrinsics &amp; distortion: same as common<br>
+      Overlaps: <code>cam0–cam1, cam3–cam4</code><br>
+      Relative extrinsics: <code>T_cn_cnm1</code> (cam2 ← cam1)<br>
+      Time offset: <code>timeshift_cam_imu</code>
+  </li>
+  <li><code class="lang-python">'/camera/infra1/image_rect_raw/compressed'</code> (cam3):<br>
+      Extrinsics: <code>T_cam_imu</code> (IMU → cam3)<br>
+      Intrinsics &amp; distortion: same as common<br>
+      Overlaps: <code>cam0–cam2, cam4</code><br>
+      Relative extrinsics: <code>T_cn_cnm1</code> (cam3 ← cam2)<br>
+      Time offset: <code>timeshift_cam_imu</code>
+  </li>
+  <li><code class="lang-python">'/camera/infra2/image_rect_raw/compressed'</code> (cam4):<br>
+      Extrinsics: <code>T_cam_imu</code> (IMU → cam4)<br>
+      Intrinsics &amp; distortion: same as common<br>
+      Overlaps: <code>cam0–cam3</code><br>
+      Relative extrinsics: <code>T_cn_cnm1</code> (cam4 ← cam3)<br>
+      Time offset: <code>timeshift_cam_imu</code>
+  </li>
+</ul>
+<br>
+The calibration format for <b>calib_results_imu_XX.txt</b> is as follows:
+<ul>
+  <li><code class="lang-python">'/dvxplorer_left/imu'</code>:<br>
+    Extrinsic calibration: <code>T_i_b</code> (IMU → body frame),<br>
+    Accelerometer noise density: <code>accelerometer_noise_density</code>,<br>
+    Accelerometer random walk: <code>accelerometer_random_walk</code>,<br>
+    Gyroscope noise density: <code>gyroscope_noise_density</code>,<br>
+    Gyroscope random walk: <code>gyroscope_random_walk</code>,<br>
+    Model: <code>model</code>,<br>
+    Time offset: <code>time_offset</code>,<br>
+    Update rate: <code>update_rate</code> Hz.</li>
+</ul>
+
+
+
 
  <!--  <div class="section-title"><h2>Calibrations</h2></div> -->
 
