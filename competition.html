@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <link rel="icon" href="assets/img/nail.png" type="image/png">
   <title>EvSLAM Challenge</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
@@ -92,7 +92,7 @@
   </ul>
 
   <div class="section-title"><h2>Data</h2></div>
-  <p class="justified-text">We provide seven sequences (seq001 – seq007) for algorithm evaluation. In addition, a separate test sequence (mecanum-test) with ground truth is included to facilitate algorithm debugging.</p>
+  <p class="justified-text">We provide seven sequences (<b>seq001 – seq007</b>) for algorithm evaluation. In addition, a separate test sequence (<b>mecanum-test</b>) with ground truth is included to facilitate algorithm debugging.</p>
   <p class="justified-text">You can download the data through <a href="download.html"><b>this link</b></a>.</p>
 
   <!-- Evaluation Metrics -->
@@ -109,22 +109,18 @@
 
   <ul class="justified-text">
       $$ 
-      \text{ATE} = \frac{1}{N} \sum_{i=1}^{N} \left\| \mathbf{p}_i - \mathbf{p}_{i,\text{gt}} \right\|
+      \text{ATE} = \frac{1}{N} \sum_{i=1}^{N} \left\| \mathbf{p}_i - \mathbf{p}_{i,\text{gt}} \right\|.\tag{1}
       $$
   </ul>
 
   <ul class="justified-text">
-      <li><b>AUC:</b> Accurate velocity estimation is crucial for closed-loop control, yet no standardized metric assesses linear velocity error. While Relative Pose Error (RPE) translation approximates velocity error, discretization artifacts and false positives (low RPE despite poor velocity estimates) limit its validity.</li>
-  </ul>
-
-  <ul class="justified-text">
+      <li><b>AUC:</b> Accurate velocity estimation is crucial for closed-loop control, yet no standardized metric assesses linear velocity error. While Relative Pose Error (RPE) translation approximates velocity error, discretization artifacts and false positives (low RPE despite poor velocity estimates) limit its validity.
     Common metrics like Absolute (AVE) and Relative Velocity Error (RVE) report statistical summaries but ignore speed-dependent error severity and lack ranking clarity.
-  </ul>
-  <ul class="justified-text">We propose a speed-weighted success metric:</ul>
+  We propose a speed-weighted success metric:</li></ul>
 
   <ul class="justified-text">
     $$ 
-    S_{\xi} = \frac{\sum_{i}^{N} \left\| \mathbf{v}_{\text{gt},i} \right\| \cdot \delta(e_{\text{RV},i} < \xi)}{\sum_i^{N} \left\| \mathbf{v}_{\text{gt},i} \right\|}
+    S_{\xi} = \frac{\sum_{i}^{N} \left\| \mathbf{v}_{\text{gt},i} \right\| \cdot \delta(e_{\text{RV},i} < \xi)}{\sum_i^{N} \left\| \mathbf{v}_{\text{gt},i} \right\|}.\tag{2}
     $$
   </ul>
   <ul class="justified-text">
@@ -139,13 +135,13 @@
           (2024)</a>, and uslam <a href="https://arxiv.org/abs/1709.06310" target="_blank">Vidal et al. (2018))</a>, obtained using raw data from <a href="https://arxiv.org/abs/2311.18189" target="_blank"> LU et al.
             (2024)</a></a>;
         (b): Boxplot results of the RVE statistics shown in (a);
-        (c): Unweighted success-rate curves (i.e., $S_{\xi} = \frac{1}{N}\sum_{i=1}^{N}\delta(e_{\mathrm{RV},i}<\xi)$);
-        (d): Success-rate curves using Eq.&nbsp;(5).
+        (c): Unweighted success-rate curves (<i>i.e.</i>, $S_{\xi} = \frac{1}{N}\sum_{i=1}^{N}\delta(e_{\mathrm{RV},i}<\xi)$);
+        (d): Success-rate curves using Eq.&nbsp;(2).
       </figcaption>
   </figure>
   </ul>
   
-  
+  <p class="justified-text">For the ranking, we calculate the total AUC and total ATE across all sequences. The method with the highest AUC score ranks first. In case of a tie in AUC, the method with the smaller ATE wins.</p>
   
   <!-- <ul class="justified-text">
       $$ 
@@ -234,7 +230,7 @@
       </ul>
       
       <p style="text-align: justify; color: #444;">
-         This benchmark is governed by the 
+         This EvSLAM Challenge is governed by the 
         <a href="https://sites.google.com/view/zhouyi-joey/home" target="_blank"><b>NAIL Lab</b></a>.
       </p>
       
