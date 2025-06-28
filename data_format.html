@@ -208,12 +208,48 @@ The calibration format for <b>calib_results_imu_XX.txt</b> is as follows:
 
   <div class="section-title"><h2>Sensor Suite</h2></div>
   <center><img src="images/data_format/sensor_suite.png" width="80%"></center>
-  <br>
-  As illustrated in the figure, the coordinate systems of the sensors are defined as follows:
   <ul>
-    <li> Event cameras: x -> right, y -> down, z -> forward </li>
-    <li> Realsense D435: x -> right, y -> down, z -> forward </li>
-    <li> IMU: x -> right, y -> down, z -> forward </li>
+    <br>
+    As illustrated in the figure, the coordinate systems of the sensors are defined as follows:
+    <ul>
+      <li>Event cameras: x -> right, y -> down, z -> forward</li>
+      <li>Frame-based Camera: x -> right, y -> down, z -> forward</li>
+      <li>IMU: x -> right, y -> down, z -> forward</li>
+    </ul>
+    <p>The specific sensor models and their parameters are shown in the table below:</p>
+    <!-- Sensor models table -->
+    <table border="1" cellpadding="5" cellspacing="0" style="width: 70%; margin-top: 20px;">
+      <thead>
+        <tr>
+          <th><strong>Sensor</strong></th>
+          <th><strong>Descriptison</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Event Cameras</strong></td>
+          <td>
+            2 x DVXplorer
+            <br>640x480, 10cm baseline</td>
+        </tr>
+        <tr>
+          <td><strong>Frame-based Camera</strong></td>
+          <td>Intel RealSense D435 
+            <br>2 x 640x480 Grayscale, 5cm baseline, 30Hz, 
+            <br>1 x 640x480 RGB, 30Hz
+          </td>
+        </tr>
+        <tr>
+          <td><strong>IMU</strong></td>
+          <td>Bosch BMI-160
+            <br>800Hz</td>
+        </tr>
+        <tr>
+          <td><strong>Motion Capture Device</strong></td>
+          <td>NOKOV Mars26H <br> 120Hz (for drone) and 60Hz (for others)</td>
+        </tr>
+      </tbody>
+    </table>
   </ul>
 
 
